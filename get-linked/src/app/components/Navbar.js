@@ -17,7 +17,7 @@ function Navbar() {
     )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
 position: fixed;
 top: 0%;
 width: 100%;
