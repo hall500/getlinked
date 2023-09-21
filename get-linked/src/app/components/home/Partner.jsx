@@ -2,51 +2,23 @@
 import React from "react";
 import styled from "styled-components";
 
-function Questions() {
+function Partner() {
   return (
     <Wrapper>
       <div className="wrapper">
         <div className="intro-text">
-          <h1>
-            Questions Criteria Ask<span>Question</span>
-          </h1>
+          <h1>Partners and Sponsors</h1>
           <p>
-            We got answers to the questions that you might want to ask about
-            getlinked Hackathon 1.0
+            Getlinked Hackathon 1.0 is honored to have the following major
+            companies as its partners and sponsors
           </p>
-          <div>
-            <button>
-              Can I work on a project I started before the hackathon?
-              <img src="/images/plus.png" alt="+" />
-            </button>
-            <button>
-              What happens if I need help during the hackathon?
-              <img src="/images/plus.png" alt="+" />
-            </button>
-            <button>
-              What happens if I don't have an idea for a project?
-              <img src="/images/plus.png" alt="+" />
-            </button>
-            <button>
-              Can I join a team or do I have to come with one?
-              <img src="/images/plus.png" alt="+" />
-            </button>
-            <button>
-              What happens after the hackathon ends
-              <img src="/images/plus.png" alt="+" />
-            </button>
-            <button>
-              Can I work on a project I started before the hackathon?
-              <img src="/images/plus.png" alt="+" />
-            </button>
-          </div>
           <img src="/images/star pu.png" alt="star" className="pu" />
         </div>
         <div className="images">
           <img
-            src="/images/questions.png"
-            alt="questions"
-            className="questions"
+            src="/images/part.png"
+            alt="part"
+            className="part"
           />
           <img src="/images/star.png" alt="star" className="star" />
           <img src="/images/blur-star.png" alt="blur" className="blur" />
@@ -59,23 +31,31 @@ function Questions() {
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
-  //   background: url("/images/multiple.png"),
-  //     #140d27 -155.25px -155px / 114.411% 118.9% no-repeat;
-  //   background-blend-mode: hard-light;
-  //   background-repeat: no-repeat;
+    background: url("/images/multiple.png"),
+      #140d27 -155.25px -155px / 114.411% 118.9% no-repeat;
+    background-blend-mode: hard-light;
+    background-repeat: no-repeat;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   .wrapper {
     position: relative;
     max-width: 1550px;
     margin: 0% auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 100px 150px;
     .images {
-      width: 45%;
-      .questions {
-        width: 600px;
+      width: 100%;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+      .part {
+        // width: 600px;
+        border-radius: 5px;
+border: 1px solid #D434FE;
+background: rgba(255, 255, 255, 0.01);
+padding: 120px;
       }
       .star {
         position: absolute;
@@ -89,9 +69,9 @@ const Wrapper = styled.div`
       }
     }
     .intro-text {
-      width: 55%;
+      width: 100%;
+      text-align: center;
       h1 {
-        width: 300px;
         margin-bottom: 30px;
         color: #fff;
         //         font-family: 'Montserrat', sans-serif;
@@ -109,7 +89,8 @@ const Wrapper = styled.div`
       }
       p {
         color: #fff;
-        width: 55%;
+        width: 40%;
+        margin: 0% auto;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -152,4 +133,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Questions;
+export default Partner;
