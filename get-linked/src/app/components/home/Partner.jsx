@@ -35,7 +35,7 @@ const Wrapper = styled.div`
       #140d27 -155.25px -155px / 114.411% 118.9% no-repeat;
     background-blend-mode: hard-light;
     background-repeat: no-repeat;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   .wrapper {
     position: relative;
     max-width: 1550px;
