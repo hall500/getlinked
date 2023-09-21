@@ -2,18 +2,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function Introduction() {
+function Rules() {
   return (
     <Wrapper>
       <div className="wrapper">
-        <div className="images">
-          <img src="/images/sata gra.png" alt="sata" className="sata" />
-          <img src="/images/mind.png" alt="mind-bulb" />
-          <img src="/images/arrow.png" alt="arrow" />
-        </div>
         <div className="intro-text">
           <h1>
-            Introduction to getlinked <span>tech Hackathon 1.0</span>
+            Rules and <span>Guidelines</span>
           </h1>
           <p>
             Our tech hackathon is a melting pot of visionaries, and its purpose
@@ -23,7 +18,12 @@ function Introduction() {
             problems, pushing the boundaries of technology, and creating
             solutions that can change the world, that's what we're all about!
           </p>
-          <img src="/images/star pu.png" alt="star" />
+          <img src="/images/blur-star.png" alt="star" className="blur"/>
+          <img src="/images/star.png" alt="star" className="star"/>
+        </div>
+        <div className="images">
+          <img src="/images/rules.png" alt="rules" />
+          <img src="/images/right.png" alt="right" className="right"/>
         </div>
       </div>
     </Wrapper>
@@ -33,6 +33,10 @@ function Introduction() {
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
+  background: url("/images/multiple.png"),
+    #140d27 -155.25px -155px / 114.411% 118.9% no-repeat;
+  background-blend-mode: hard-light;
+  background-repeat: no-repeat;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   .wrapper {
     position: relative;
@@ -41,19 +45,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 200px;
-    .images {
-      .sata {
-        position: absolute;
-        top: 250px;
-        left: 150px;
-      }
-    }
+    padding: 20px 200px;
     .intro-text {
       width: 480px;
       h1 {
-        width: 450px;
-        margin-bottom: 30px;
+        width: 200px;
+        margin-bottom: 20px;
         color: #fff;
         //         font-family: 'Montserrat', sans-serif;
         // font-family: 'Roboto', sans-serif;
@@ -76,13 +73,29 @@ const Wrapper = styled.div`
         font-weight: 400;
         line-height: 27.5px; /* 196.429% */
       }
-      img {
+      .blur {
         position: absolute;
-        right: 200px;
-        top: 220px;
+        left: 450px;
+        top: 200px;
       }
+      .star {
+        position: absolute;
+        left: 680px;
+        top: 500px;
+      }
+    }
+    .images {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .right {
+            position: absolute;
+            right: 0%;
+            bottom: -50%;
+        }
     }
   }
 `;
 
-export default Introduction;
+export default Rules;
