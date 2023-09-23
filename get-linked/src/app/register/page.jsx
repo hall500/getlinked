@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 function Register() {
+  const [open, setOpen] = useState(false)
   const [detail, setDetail] = React.useState({
     teamName: "",
     projectName: "",
@@ -74,9 +75,12 @@ function Register() {
 
   return (
     <Wrapper>
+      <div className='modal' style={open !== false && detail.teamName !== "" && detail.projectName !== "" && detail.agree ? {display: 'flex'} : {display: 'none'}}>
+<Image src='/images/Confirmation.png' alt='confirmation' width={600} height={600} className='confirm' onClick={() => setOpen(!open)}/>
+      </div>
         <div className="wrapper">
             <div className='images'>
-                <Image src='/images/image.png' width={800} height={800}/>
+                <Image src='/images/image.png' width={800} height={800}  className='me'/>
             </div>
         <div className='container'>
           <h1>Register</h1>
@@ -223,7 +227,7 @@ function Register() {
               <span className="check"></span>
             </label>
             <br />
-            <button>Register Now</button>
+            <button onClick={() => setOpen(!open)}>Register Now</button>
           </form>
         </div>
       </div>
@@ -233,6 +237,22 @@ function Register() {
 const Wrapper = styled.div`
 width: 100%;
 height: auto;
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(21, 14, 40, 0.93);
+  z-index: 9999;
+  .confirm {
+    margin-top: 100px;
+  }
+}
 .wrapper {
     margin-top: 120px;
     display: flex;
@@ -378,6 +398,13 @@ height: auto;
     }
 }
 @media (max-width: 768px) {
+  .modal {
+    padding: 20px;
+    .confirm {
+      width: 100%;
+      height: 400px;
+    }
+  }
   .wrapper {
     margin-top: 100px;
     flex-direction: column;
@@ -385,6 +412,12 @@ height: auto;
     .images {
       width: 100%;
       .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .images {
+      .me {
         width: 100%;
         height: 100%;
       }

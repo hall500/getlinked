@@ -218,7 +218,12 @@ const Wrapper = styled.div`
         width: 100%;
         padding: 0px 20px;;
         .title {
+          font-size: 30px;
           margin: 100px 0px 20px 0px;
+        }
+        p {
+          width: 100%;
+          font-size: 15px;
         }
         button {
           align-items: center;
@@ -230,20 +235,21 @@ const Wrapper = styled.div`
         background-position: center;
         height: 700px;
         .uni {
-          width: 400px;
-          height: 400px;
+          width: 300px;
+          height: 300px;
         }
         h1 {
           top: 150px;
-          font-size: 24px; 
+          font-size: 15px; 
         }
         .bar {
-          top: 190px;
-          right: 150px;
+          width: 200px;
+          top: 180px;
+          right: 30px;
         }
       }
       .timer {
-        font-size: 100px;
+        font-size: 50px;
         bottom: 50px;
       }
     }
