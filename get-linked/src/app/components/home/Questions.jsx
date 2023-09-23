@@ -25,7 +25,7 @@ function Questions() {
               <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
-              What happens if I don't have an idea for a project?
+              What happens if I don&apos;t have an idea for a project?
               <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
