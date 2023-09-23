@@ -4,6 +4,45 @@ import React from "react";
 import styled from "styled-components";
 
 function Header() {
+  const [timeRemaining, setTimeRemaining] = React.useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  React.useEffect(() => {
+    // Set the target time (00:00:00)
+    const targetTime = new Date();
+    //targetTime.setHours(targetTime.getHours() + 1, 0, 0, 0);
+    targetTime.setHours(0, 0, 0, 0);
+
+    // Update the countdown timer every second
+    const interval = setInterval(() => {
+      const currentTime = new Date();
+      const timeDifference = targetTime - currentTime;
+
+      // Calculate hours, minutes, and seconds from the time difference
+      const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      // Update the state with the remaining time
+      setTimeRemaining({
+        hours: hours < 10 ? `0${hours}` : hours,
+        minutes: minutes < 10 ? `0${minutes}` : minutes,
+        seconds: seconds < 10 ? `0${seconds}` : seconds,
+      });
+
+      // Check if the timer has reached 00:00:00 and clear the interval
+      if (timeDifference <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Wrapper>
       <div className="wrapper">
@@ -21,7 +60,7 @@ function Header() {
           </p>
           <button>Register</button>
           <h1 className="timer">
-            00<span>H</span> 00<span>M</span> 00<span>S</span>
+            {timeRemaining.hours}<span>H</span> {timeRemaining.minutes}<span>M</span> {timeRemaining.seconds}<span>S</span>
           </h1>
         </div>
         <div className="bg-img">
