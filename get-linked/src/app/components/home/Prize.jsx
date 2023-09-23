@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,9 +8,9 @@ function Prize() {
     <Wrapper>
       <div className="wrapper">
         <div className="images">
-          <img src="/images/cup.png" alt="cup" className="cup" />
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/blur-star.png" alt="blur" className="blur" />
+          <Image src="/images/cup.png" alt="cup" className="cup" width={800} height={500}/>
+          <Image src="/images/star.png" alt="star" className="star" width={35} height={35}/>
+          <Image src="/images/blur-star.png" alt="blur" className="blur" width={35} height={35}/>
         </div>
         <div className="intro-text">
           <div className="title">
@@ -20,11 +21,11 @@ function Prize() {
             Highlight of the prizes or rewards for winners and for participants.
           </p>
           </div>
-          <img src="/images/cup.png" alt="cup" className="cups" />
+          <Image src="/images/cup.png" alt="cup" className="cups" width={35} height={35}/>
           <div>
-            <img src="/images/Rewards.png" alt="reward" />
+            <Image src="/images/Rewards.png" alt="reward" width={700} height={500}/>
           </div>
-          <img src="/images/star pu.png" alt="star" className="pu" />
+          <Image src="/images/star pu.png" alt="star" className="pu" width={35} height={35}/>
         </div>
       </div>
     </Wrapper>
@@ -56,9 +57,7 @@ const Wrapper = styled.div`
       .cup {
         width: 500px;
       }
-      .cups {
-        display: none;
-      }
+      
       .star {
         position: absolute;
         bottom: 100px;
@@ -72,6 +71,9 @@ const Wrapper = styled.div`
     }
     .intro-text {
       width: 55%;
+      .cups {
+        display: none;
+      }
       .title {
         h1 {
           width: 200px;

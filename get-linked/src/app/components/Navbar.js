@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react"
 import styled from "styled-components";
@@ -7,7 +8,7 @@ function Navbar() {
   const [open, setOpen] = useState(false)
   return (
     <Wrapper>
-      <img src="/images/getlinked.png" alt="logo" />
+      <Link href='/'><Image src="/images/getlinked.png" alt="logo" width={200} height={50}/></Link>
       <ul style={open !== false ? {height: '100vh', left: 0} : {left: '-100%', overflow: 'hidden'}}>
         <li><a>Timeline</a></li>
         <li><a>Overview</a></li>
@@ -16,7 +17,7 @@ function Navbar() {
         <Link href='/register' className="button">Register</Link>
       </ul>
       <div style={open !== false ? {border: '1px solid #903AFF'} : null}>
-        <img onClick={() => setOpen(!open)} src={open !== false ? "/images/close.png" : "/images/open.png"} alt="open menu" className="hamper" />
+        <Image onClick={() => setOpen(!open)} src={open !== false ? "/images/close.png" : "/images/open.png"} alt="open menu" className="hamper" width={35} height={35}/>
       </div>
     </Wrapper>
   )
