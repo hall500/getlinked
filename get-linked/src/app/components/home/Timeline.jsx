@@ -380,7 +380,7 @@ const Wrapper = styled.div`
     border-left: none !important;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media (max-width: 1200px) {
     padding: 70px 30px 0px;
     .row {
       max-width: 960px;
@@ -393,7 +393,7 @@ const Wrapper = styled.div`
       padding: 50px 0 0 0;
     }
   }
-  @media screen and (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 70px 30px 0px;
     .row {
       max-width: 400px;

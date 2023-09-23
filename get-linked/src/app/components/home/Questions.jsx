@@ -150,6 +150,46 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media (max-width: 768px) {
+    .wrapper {
+      margin: 0%;
+      text-align: center
+      align-items: center;
+        justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      .images {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+        .questions {
+          width: 100%;
+        }
+        .blur,
+        .star {
+          display: none;
+        }
+      }
+      .intro-text {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding: 20px 0px;
+        h1 {
+          width: 100%;
+        }
+        p {
+          width: 100%;
+        }
+        div {
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
 `;
 
 export default Questions;

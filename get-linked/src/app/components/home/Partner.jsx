@@ -131,6 +131,35 @@ padding: 120px;
       }
     }
   }
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 50px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .images .part {
+      width: 100%;
+      padding: 60px; /* Adjust padding for smaller screens */
+    }
+
+    .images .star {
+      left: 50%; /* Adjust position for smaller screens */
+      transform: translateX(-50%);
+    }
+
+    .images .blur {
+      left: 50%; /* Adjust position for smaller screens */
+      bottom: 200px; /* Adjust position for smaller screens */
+      transform: translateX(-50%);
+    }
+
+    .intro-text p {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+
+    .intro-text div button {
+      width: 100%; /* Adjust button width for smaller screens */
+    }
+  }
 `;
 
 export default Partner;
