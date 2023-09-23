@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,16 +13,16 @@ function Partner() {
             Getlinked Hackathon 1.0 is honored to have the following major
             companies as its partners and sponsors
           </p>
-          <img src="/images/star pu.png" alt="star" className="pu" />
+          <Image src="/images/star pu.png" alt="star" className="pu" width={35} height={35}/>
         </div>
         <div className="images">
-          <img
+          <Image
             src="/images/part.png"
             alt="part"
-            className="part"
+            className="part" width={1200} height={600}
           />
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/blur-star.png" alt="blur" className="blur" />
+          <Image src="/images/star.png" alt="star" className="star" width={35} height={35}/>
+          <Image src="/images/blur-star.png" alt="blur" className="blur" width={35} height={35}/>
         </div>
       </div>
     </Wrapper>

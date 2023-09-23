@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -31,35 +32,35 @@ function Privacy() {
             </p>
             <div>
             <p>
-                <img src="/images/verify.png" alt="verify" />
+                <Image src="/images/verify.png" alt="verify" width={800} height={800}/>
                 The Standard License grants you a non-exclusive right to
                 navigate and register for our event
             </p>
           </div>
           <div>
             <p>
-                <img src="/images/verify.png" alt="verify" />
+                <Image src="/images/verify.png" alt="verify" width={800} height={800}/>
                 You are licensed to use the item available at any free source
                 sites, for your project developement
             </p>
           </div>
           <button>Read More</button>
           </div>
-          <img src="/images/star pu.png" alt="star" className="pu" />
+          <Image src="/images/star pu.png" alt="star" className="pu" width={35} height={35}/>
         </div>
         <div className="images">
-          <img
+          <Image
             src="/images/factor.png"
             alt="factor"
-            className="factor"
+            className="factor" width={650} height={800}
           />
-          <img
+          <Image
             src="/images/private.png"
             alt="private"
-            className="private"
+            className="private" width={800} height={800}
           />
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/blur-star.png" alt="blur" className="blur" />
+          <Image src="/images/star.png" alt="star" className="star" width={35} height={35}/>
+          <Image src="/images/blur-star.png" alt="blur" className="blur" width={35} height={35}/>
         </div>
       </div>
     </Wrapper>

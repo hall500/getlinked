@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,9 +8,9 @@ function Introduction() {
     <Wrapper>
       <div className="wrapper">
         <div className="images">
-          <img src="/images/sata gra.png" alt="sata" className="sata" />
-          <img src="/images/mind.png" alt="mind-bulb" />
-          <img src="/images/arrow.png" alt="arrow" className="arrow"/>
+          <Image src="/images/sata gra.png" alt="sata" className="sata" width={35} height={35}/>
+          <Image src="/images/mind.png" alt="mind-bulb" width={500} height={500}/>
+          <Image src="/images/arrow.png" alt="arrow" className="arrow" width={35} height={35}/>
         </div>
         <div className="intro-text">
           <h1>
@@ -23,7 +24,7 @@ function Introduction() {
             problems, pushing the boundaries of technology, and creating
             solutions that can change the world, that's what we're all about!
           </p>
-          <img src="/images/star pu.png" alt="star" />
+          <Image src="/images/star pu.png" alt="star" width={35} height={35}/>
         </div>
       </div>
     </Wrapper>

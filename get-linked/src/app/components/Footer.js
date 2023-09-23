@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import React from "react"
 import styled from "styled-components";
 
@@ -6,7 +7,7 @@ function Footer() {
     return (
         <Wrapper>
             <div className="intro-text">
-                <img src="/images/getlinked.png" alt="" />
+                <Image src="/images/getlinked.png" alt="" width={200} height={50}/>
                 <p>
                     Getlinked Tech Hackathon is a technology innovation program
                     established by a group of organizations with the aim of showcasing
@@ -16,8 +17,8 @@ function Footer() {
                     <p>Terms of Use</p>
                     <p className="priv">Privacy Policy</p>
                 </div>
-                <img src="/images/blur-star.png" alt="star" className="blur" />
-                <img src="/images/star.png" alt="star" className="star" />
+                <Image src="/images/blur-star.png" alt="star" className="blur" width={30} height={30}/>
+                <Image src="/images/star.png" alt="star" className="star" width={30} height={30}/>
             </div>
             <div className="content">
                 <div></div>
