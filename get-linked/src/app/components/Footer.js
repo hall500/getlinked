@@ -70,5 +70,36 @@ padding: 100px 200px;
       top: 500px;
     }
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    .intro-text {
+        padding: 0; /* Remove padding for smaller screens */
+        
+        div {
+            margin-top: 20px; /* Adjust margin for links for smaller screens */
+            
+            p {
+                font-size: 12px; /* Adjust font size for links for smaller screens */
+                padding: 5px 0; /* Adjust padding for links for smaller screens */
+            }
+            
+            &.priv {
+                margin-top: 10px; /* Adjust margin for "Privacy Policy" link */
+            }
+        }
+        
+        .blur {
+            display: block; /* Show the blurred star image for smaller screens */
+            position: static; /* Remove absolute positioning for smaller screens */
+            margin: 20px auto; /* Center-align the blurred star image */
+        }
+        
+        .star {
+            display: block; /* Show the star image for smaller screens */
+            position: static; /* Remove absolute positioning for smaller screens */
+            margin: 20px auto; /* Center-align the star image */
+        }
+    }
+}
 `
 export default Footer;

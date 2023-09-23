@@ -9,7 +9,7 @@ function Introduction() {
         <div className="images">
           <img src="/images/sata gra.png" alt="sata" className="sata" />
           <img src="/images/mind.png" alt="mind-bulb" />
-          <img src="/images/arrow.png" alt="arrow" />
+          <img src="/images/arrow.png" alt="arrow" className="arrow"/>
         </div>
         <div className="intro-text">
           <h1>
@@ -80,6 +80,38 @@ const Wrapper = styled.div`
         position: absolute;
         right: 200px;
         top: 220px;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 50px 10px; /* Adjust padding for screens of 768px or less */
+    
+    .wrapper {
+      flex-direction: column;
+      width: 100%;
+      margin: 0%;
+      .images {
+        margin-bottom: 80px;
+        .sata {
+          top: 150px; /* Adjust image position for smaller screens */
+        }
+        .arrow {
+          margin-left: 45%;
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .intro-text {
+        text-align: center;
+        h1 {
+          font-size: 24px; /* Adjust font size for smaller screens */
+          span {
+            font-size: 24px; /* Adjust font size for smaller screens */
+          }
+        }
+        p {
+          font-size: 12px; /* Adjust font size for smaller screens */
+        }
       }
     }
   }

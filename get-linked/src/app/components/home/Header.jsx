@@ -159,11 +159,52 @@ const Wrapper = styled.div`
       .uni {
         z-index: 1000;
       }
-      // .blur {
-      //     left: 30%;
-      //     bottom: -100%;
-      // }
+      .blur {
+        display: none;
+          left: 30%;
+          bottom: -100%;
+      }
     }
+  }
+  @media (max-width: 768px) {
+    padding: 0px;
+    .wrapper {
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      .intro-text {
+        align-items: center;
+        text-align: center;
+        height: 750px;
+        width: 100%;
+        padding: 0px 20px;;
+        .title {
+          margin: 100px 0px 20px 0px;
+        }
+        button {
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .bg-img {
+        width: 100%; 
+        background-position: center;
+        height: 700px;
+        h1 {
+          top: 150px;
+          font-size: 24px; 
+        }
+        .bar {
+          top: 190px;
+          right: 150px;
+        }
+      }
+      .timer {
+        font-size: 100px;
+        bottom: 50px;
+      }
+    }
+    
   }
 `;
 

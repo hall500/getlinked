@@ -151,6 +151,43 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media (max-width: 768px) {
+    padding: 50px 10px; /* Adjust padding for screens of 768px or less */
+
+    .wrapper {
+      width: 100%;
+      margin: 0%;
+      flex-direction: column;
+      .images {
+        .circle {
+          top: 70px;
+          left: 120px;
+        }
+        .star {
+          bottom: 10px;
+        }
+      }
+      .intro-text {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        h1 {
+          width: 
+          font-size: 24px; /* Adjust font size for smaller screens */
+          span {
+            font-size: 24px; /* Adjust font size for smaller screens */
+          }
+        }
+        p {
+          font-size: 12px; /* Adjust font size for smaller screens */
+        }
+        button {
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
 `;
 
 export default Judging;

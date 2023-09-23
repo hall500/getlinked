@@ -96,6 +96,32 @@ const Wrapper = styled.div`
         }
     }
   }
+  @media (max-width: 768px) {
+    .wrapper {
+      width: 100%;
+      margin: 0%;
+      flex-direction: column-reverse;
+      padding: 20px; /* Adjust padding for responsiveness at 768px */
+      .intro-text {
+        text-align: center;
+        max-width: 100%; /* Full width for intro-text at 768px */
+        h1 {
+          width: 100%;
+          font-size: 24px; /* Adjust font size for h1 at 768px */
+          span {
+            font-size: 24px; /* Adjust font size for span at 768px */
+          }
+        }
+        p {
+          font-size: 12px; /* Adjust font size for p at 768px */
+          margin-bottom: 10px; /* Adjust margin for spacing at 768px */
+        }
+        .star {
+          display: block; /* Show the star image at 768px */
+        }
+      }
+    }
+  }
 `;
 
 export default Rules;
