@@ -18,10 +18,10 @@ function Register() {
 
   const fetchCategoryList = async () => {
     try {
-      var myHeaders = new Headers();
+      const myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
-      var requestOptions = {
+      const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -30,7 +30,6 @@ function Register() {
       const response = await fetch(`${baseUrl}/hackathon/categories-list`, requestOptions)
       let result = await response.json();
       setCategories(result);
-
     } catch (error) {
       console.log(error);
     }
@@ -47,9 +46,6 @@ function Register() {
       console.log('An Error occurred');
       return;
     }
-
-    console.log(detail);
-    return;
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -179,7 +175,10 @@ function Register() {
                   required
                   value={detail?.category}
                   onChange={() =>
-                    console.log(e.target.value)
+                    setDetail({
+                      ...detail,
+                      category: e.target.value,
+                    })
                   }
                 >
                   <option value="0">Select your category</option>

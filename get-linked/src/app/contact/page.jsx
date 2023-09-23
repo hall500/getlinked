@@ -1,28 +1,66 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
-function page() {
-    const [detail, setDetail] = useState({
-        fullName: "",
-        email: "",
-        message: "",
+function Contact() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleFormSubmission = async (e) => {
+    e.preventDefault();
+
+    // Validate form fields
+    if (formData.fullName === '' || formData.email === '' || formData.message === '') {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "email": formData.email,
+        "phone_number": "08124688722",
+        "first_name": formData.fullName,
+        "message": formData.message
+    });
+
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    setSubmitting(true);
+    try {
+        
+      const response = await fetch("https://backend.getlinked.ai/hackathon/contact-form", requestOptions);
+
+      if(!response.ok){
+        throw new Error("Contact Submission Error");
+      }
+
+      //redirect to confirmation
+      const result = await response.json();
+      console.log('Form submitted successfully.', result);
+        // Optionally, reset the form fields:
+      setFormData({
+            fullName: '',
+            email: '',
+            message: '',
       });
-      const handleFormSubmition = (e) => {
-        e.preventDefault();
-    
-        if (detail.fullName !== "" || detail.email !== "") {
-          setDetail({
-            fullName: "",
-            email: "",
-            message: "",
-          });
-          alert(
-            `Hello ${detail?.fullName} Your message "${detail?.fullName}" was delivered successfuly, ${name} will be with you shortly`
-          );
-          return;
-        }
-      };
+    } catch (error) {
+      console.error('An error occurred: ', error.message);
+    } finally {
+        setSubmitting(false);
+    }
+  };
+
   return (
     <Wrapper>
         <div className='wrapper'>
@@ -37,35 +75,33 @@ function page() {
         <div className='container'>
             <p>Questions or need assistance?</p>
             <p>Let us know  about it!</p>
-            <form onSubmit={handleFormSubmition}>
-                <input type='text' placeholder='Full Name' className='name' value={detail?.fullName}
-              onChange={(e) =>
-                setDetail({
-                  ...detail,
-                  fullName: e.target.value,
-                })
-              }/>
-                <input type='email' placeholder='Mail' value={detail?.email}
-              onChange={(e) =>
-                setDetail({
-                  ...detail,
-                  email: e.target.value,
-                })
-              }/>
-                <textarea placeholder='Message' value={detail?.message}
-              onChange={(e) =>
-                setDetail({
-                  ...detail,
-                  message: e.target.value,
-                })
-              }/>
-                <button type='submit'>Submit</button>
+            <form>
+                <input
+                type="text"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                />
+                <input
+                type="email"
+                placeholder="Mail"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
+                <textarea
+                placeholder="Message"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+                <button onClick={handleFormSubmission} disabled={ submitting ? true : '' }>{ submitting ? 'Submitting...' : 'Submit' }</button>
+            
             </form>
         </div>
         </div>
     </Wrapper>
-  )
+  );
 }
+
 const Wrapper = styled.div`
 width: 100%;
 height: auto;
