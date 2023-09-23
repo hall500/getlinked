@@ -23,7 +23,7 @@ function Prize() {
           </div>
           <Image src="/images/cup.png" alt="cup" className="cups" width={35} height={35}/>
           <div>
-            <Image src="/images/Rewards.png" alt="reward" width={700} height={500}/>
+            <Image src="/images/Rewards.png" alt="reward" width={700} height={500} className="reward"/>
           </div>
           <Image src="/images/star pu.png" alt="star" className="pu" width={35} height={35}/>
         </div>
@@ -167,6 +167,10 @@ const Wrapper = styled.div`
         align-items: center;
         text-align: center;
         justify-content: center;
+        .reward {
+          width: 100%;
+          height: 350px;
+        }
         .title {
           width: 100%;
           position: abslute;

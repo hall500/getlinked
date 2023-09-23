@@ -23,8 +23,8 @@ function Rules() {
           <Image src="/images/star.png" alt="star" className="star"width={35} height={35}/>
         </div>
         <div className="images">
-          <Image src="/images/rules.png" alt="rules" width={800} height={700}/>
-          <Image src="/images/right.png" alt="right" className="right" width={800} height={700}/>
+          <Image src="/images/rules.png" alt="rules" width={800} height={700} className="rules"/>
+          <Image src="/images/right.png" alt="right" className="right" width={800} height={700} />
         </div>
       </div>
     </Wrapper>
@@ -121,6 +121,15 @@ const Wrapper = styled.div`
           display: block; /* Show the star image at 768px */
         }
       }
+      }
+      .images {
+        .right {
+          display: none;
+        }
+        .rules {
+          width: 400px;
+          height: 400px;
+        }
     }
   }
 `;

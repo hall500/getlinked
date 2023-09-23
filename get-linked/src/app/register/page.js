@@ -3,231 +3,167 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-function Register() {
-  const [detail, setDetail] = React.useState({
-    teamName: "",
-    projectName: "",
-    phone: "",
-    email: "",
-    agree: false,
-    category: "0",
-  });
-  const [categories, setCategories] = React.useState([]);
-  const baseUrl = "https://backend.getlinked.ai";
-
-  const fetchCategoryList = async () => {
-    try {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
+function page() {
+    const [detail, setDetail] = useState({
+        teamName: "",
+        projectName: "",
+        phone: "",
+        email: "",
+        agree: false,
+      });
+    
+      const handleFormSubmition = (e) => {
+        e.preventDefault();
+    
+        if (detail.teamName !== "" || detail.projectName !== "" || !detail.agree) {
+          setDetail({
+            teamName: "",
+            projectName: "",
+            phone: "",
+            email: "",
+            agree: false,
+          });
+          alert(
+            `Hello ${detail?.teamName} Your message "${detail?.teamName}" was delivered successfuly, ${name} will be with you shortly`
+          );
+          return;
+        }
       };
-
-      const response = await fetch(`${baseUrl}/hackathon/categories-list`, requestOptions)
-      let result = await response.json();
-      setCategories(result);
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  React.useEffect(() => {
-    fetchCategoryList();
-  }, []);
-
-  const handleFormSubmition = async (e) => {
-    e.preventDefault();
-
-    if (detail.teamName === "" || detail.projectName === "" || !detail.agree) {
-      console.log('An Error occurred');
-      return;
-    }
-
-    console.log(detail);
-    return;
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      "email": detail.email,
-      "phone_number": detail.phone,
-      "team_name": detail.teamName,
-      "group_size": detail.group_size,
-      "project_topic": detail.projectName,
-      "category": detail.category,
-      "privacy_poclicy_accepted": detail.agree
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-
-    const response = await fetch(`${baseUrl}/hackathon/registration`, requestOptions);
-    const result = await response.json();
-    console.log(result);
-  };
-
-
   return (
     <Wrapper>
         <div className="wrapper">
             <div className='images'>
-                <Image src='/images/image.png' width={800} height={800}/>
+                <Image src='/images/image.png' width={800} height={800} className='image'/>
             </div>
         <div className='container'>
-          <h1>Register</h1>
-          <p>Be part of this movement!</p>
-          <h2>CREATE YOUR ACCOUNT</h2>
-          <form onSubmit={(event) => handleFormSubmition(event) }>
+            <h1>Register</h1>
+            <p>Be part of this movement!</p>
+            <h2>CREATE YOUR ACCOUNT</h2>
+            <form onSubmit={handleFormSubmition}>
             <div className="username-field">
-              <label htmlFor="teamName">
-                Team's Name
-                <br />
-                <input
-                  type="text"
-                  id="name"
-                  name="Name"
-                  value={detail?.teamName}
-                  onChange={(e) =>
-                    setDetail({
-                      ...detail,
-                      teamName: e.target.value,
-                    })
-                  }
-                  placeholder="Enter the name of your group"
-                  required
-                />
-              </label>
-
-              <label htmlFor="lastName">
-                Phone
-                <br />
-                <input
-                  type="number"
-                  id="name"
-                  name="phone"
-                  value={detail?.phone}
-                  onChange={(e) =>
-                    setDetail({
-                      ...detail,
-                      phone: e.target.value,
-                    })
-                  }
-                  placeholder="Enter your phone number"
-                  required
-                />
-              </label>
-            </div>
-            <div className="username-field">
-              <label htmlFor="email">
-                Email
-                <br />
-                <input
-                  type="email"
-                  id="name"
-                  name="email"
-                  value={detail?.email}
-                  onChange={(e) =>
-                    setDetail({
-                      ...detail,
-                      email: e.target.value,
-                    })
-                  }
-                  placeholder="Enter your email address"
-                  required
-                />
-              </label>
-
-              <label htmlFor="topic">
-                Project Topic
-                <br />
-                <input
-                  type="text"
-                  id="name"
-                  name="project_topic"
-                  value={detail?.projectName}
-                  onChange={(e) =>
-                    setDetail({
-                      ...detail,
-                      projectName: e.target.value,
-                    })
-                  }
-                  placeholder="What is your group project topic"
-                  required
-                />
-              </label>
-            </div>
-            <div className="username-field">
-              <label htmlFor="category">
-                Category
-                <br />
-                <select
-                  id="name"
-                  name="category"
-                  required
-                  value={detail?.category}
-                  onChange={() =>
-                    console.log(e.target.value)
-                  }
-                >
-                  <option value="0">Select your category</option>
-                  {categories.map((category, index) => {
-                    const { id, name } = category;
-                    return <option key={id} value={id}>{name}</option>;
-                  })}
-                </ select>
-              </label>
-
-              <label htmlFor="group">
-                Group Size
-                <br />
-                <select
-                  id="name"
-                  name="group_size"
-                  required
-                  onChange={() =>
-                    setDetail({
-                      ...detail,
-                      group_size: e.target.value,
-                    })
-                  }
-                >
-                  <option value="0">Select</option>
-                  <option value="10">1-10</option>
-                  <option value="100">11-100</option>
-                  <option value="200">101-200</option>
-                </select>
-              </label>
-            </div>
-            <label htmlFor="checkbox" className="check-wrap">
-              <input
-                type="checkbox"
-                id="checkbox"
-                checked={detail?.agree}
-                onChange={() =>
-                  setDetail({
-                    ...detail,
-                    agree: !detail?.agree,
-                  })
-                }
-                required
-              />
-              I agree to the Terms and Conditions.
-              <span className="check"></span>
-            </label>
+          <label htmlFor="teamName">
+            Team's Name
             <br />
-            <button>Register Now</button>
-          </form>
+            <input
+              type="text"
+              id="name"
+              name="Name"
+              value={detail?.teamName}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  teamName: e.target.value,
+                })
+              }
+              placeholder="Enter the name of your group"
+              required
+            />
+          </label>
+
+          <label htmlFor="lastName">
+            Phone
+            <br />
+            <input
+              type="number"
+              id="name"
+              name="phone"
+              value={detail?.phone}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  phone: e.target.value,
+                })
+              }
+              placeholder="Enter your phone number"
+              required
+            />
+          </label>
         </div>
-      </div>
+        <div className="username-field">
+          <label htmlFor="email">
+            Email
+            <br />
+            <input
+              type="email"
+              id="name"
+              name="email"
+              value={detail?.email}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  email: e.target.value,
+                })
+              }
+              placeholder="Enter your email address"
+              required
+            />
+          </label>
+
+          <label htmlFor="topic">
+            Project Topic
+            <br />
+            <input
+              type="text"
+              id="name"
+              name="project_topic"
+              value={detail?.projectName}
+              onChange={(e) =>
+                setDetail({
+                  ...detail,
+                  projectName: e.target.value,
+                })
+              }
+              placeholder="What is your group project topic"
+              required
+            />
+          </label>
+        </div>
+        <div className="username-field">
+          <label htmlFor="category">
+            Category
+            <br />
+            <select
+              id="name"
+              name="Category"
+              required
+            >
+                <option value="1">Select your category</option>
+                </ select>
+          </label>
+
+          <label htmlFor="group">
+            Group Size
+            <br />
+            <select
+              id="name"
+              name="group_size"
+              required
+            >
+                <option value="1">Select</option>
+            </select>
+          </label>
+        </div>
+        <label htmlFor="checkbox" className="check-wrap">
+          <input
+            type="checkbox"
+            id="checkbox"
+            checked={detail?.agree}
+            onChange={() =>
+              setDetail({
+                ...detail,
+                agree: !detail?.agree,
+              })
+            }
+            required
+          />
+          I agree to the Terms and Conditions.
+          <span className="check"></span>
+        </label>
+        <br />
+                <button type='submit'>Register Now</button>
+            </form>
+        </div>
+        </div>
     </Wrapper>
   )
 }
@@ -532,4 +468,4 @@ height: auto;
 
 `
 
-export default Register;
+export default page

@@ -165,6 +165,7 @@ const Wrapper = styled.div`
           width: 100%;
         }
         .questions {
+          height: 100%;
           width: 100%;
         }
         .blur,

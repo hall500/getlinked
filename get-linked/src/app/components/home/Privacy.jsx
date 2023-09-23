@@ -216,6 +216,7 @@ const Wrapper = styled.div`
         }
         .private {
           width: 100%;
+          display: none;
         }
         .blur,
         .star {
