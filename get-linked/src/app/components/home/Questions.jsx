@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -17,39 +18,39 @@ function Questions() {
           <div>
             <button>
               Can I work on a project I started before the hackathon?
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
               What happens if I need help during the hackathon?
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
               What happens if I don't have an idea for a project?
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
               Can I join a team or do I have to come with one?
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
               What happens after the hackathon ends
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
             <button>
               Can I work on a project I started before the hackathon?
-              <img src="/images/plus.png" alt="+" />
+              <Image src="/images/plus.png" alt="+" width={20} height={20}/>
             </button>
           </div>
-          <img src="/images/star pu.png" alt="star" className="pu" />
+          <Image src="/images/star pu.png" alt="star" className="pu" width={20} height={20}/>
         </div>
         <div className="images">
-          <img
+          <Image
             src="/images/questions.png"
             alt="questions"
             className="questions"
-          />
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/blur-star.png" alt="blur" className="blur" />
+          width={800} height={700}/>
+          <Image src="/images/star.png" alt="star" className="star" width={20} height={20}/>
+          <Image src="/images/blur-star.png" alt="blur" className="blur" width={20} height={20}/>
         </div>
       </div>
     </Wrapper>

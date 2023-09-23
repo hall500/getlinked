@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -18,12 +19,12 @@ function Rules() {
             problems, pushing the boundaries of technology, and creating
             solutions that can change the world, that's what we're all about!
           </p>
-          <img src="/images/blur-star.png" alt="star" className="blur"/>
-          <img src="/images/star.png" alt="star" className="star"/>
+          <Image src="/images/blur-star.png" alt="star" className="blur"width={35} height={35}/>
+          <Image src="/images/star.png" alt="star" className="star"width={35} height={35}/>
         </div>
         <div className="images">
-          <img src="/images/rules.png" alt="rules" />
-          <img src="/images/right.png" alt="right" className="right"/>
+          <Image src="/images/rules.png" alt="rules" width={800} height={700}/>
+          <Image src="/images/right.png" alt="right" className="right" width={800} height={700}/>
         </div>
       </div>
     </Wrapper>

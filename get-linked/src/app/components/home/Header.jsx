@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,11 +10,11 @@ function Header() {
         <div className="intro-text">
           <h1 className="title">
             getlinked Tech Hackathon <span>1.0</span>{" "}
-            <img src="/images/link-img.png" alt="link-logo" />{" "}
-            <img src="/images/explode.png" alt="explode" />
+            <Image src="/images/link-img.png" alt="link-logo" width={800} height={800}/>{" "}
+            <Image src="/images/explode.png" alt="explode" width={800} height={800}/>
           </h1>
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/light-bulb.png" alt="bulb image" className="bulb" />
+          <Image src="/images/star.png" alt="star" className="star" width={800} height={800}/>
+          <Image src="/images/light-bulb.png" alt="bulb image" className="bulb" width={800} height={800}/>
           <p>
             Participate in getlinked tech Hackathon 2023 stand a chance to win a
             Big prize
@@ -25,9 +26,9 @@ function Header() {
         </div>
         <div className="bg-img">
           <h1>Igniting a Revolution in HR Innovation</h1>
-          <img src="/images/bar.png" alt="bar" className="bar" />
-          <img src="/images/universe-bg.png" alt="image" className="uni" />
-          <img src="/images/blur.png" alt="image" className="blur" />
+          <Image src="/images/bar.png" alt="bar" className="bar" width={400} height={20}/>
+          <Image src="/images/universe-bg.png" alt="image" className="uni" width={700} height={700}/>
+          <Image src="/images/blur.png" alt="image" className="blur" width={0} height={0}/>
         </div>
       </div>
     </Wrapper>

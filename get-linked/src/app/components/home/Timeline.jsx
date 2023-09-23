@@ -1,5 +1,6 @@
 "use client";
 import gsap from "gsap";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useEffect } from "react";
@@ -99,7 +100,7 @@ function Timeline() {
             </div>
             <div className="writeup">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+                <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>1</p>
               </div>
               <div className="resume-scroll-left">
@@ -116,7 +117,7 @@ function Timeline() {
             </div>
             <div className="writeup">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+              <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>2</p>
               </div>
               <div className="resume-scroll-left">
@@ -139,7 +140,7 @@ function Timeline() {
             </div>
             <div className="writeup exp">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+                <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>3</p>
               </div>
               <div className="resume-scroll-left">
@@ -153,7 +154,7 @@ function Timeline() {
             </div>
             <div className="writeup">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+                <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>4</p>
               </div>
               <div className="resume-scroll-left">
@@ -179,7 +180,7 @@ function Timeline() {
             </div>
             <div className="writeup">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+                <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>5</p>
               </div>
               <div className="resume-scroll-left">
@@ -196,7 +197,7 @@ function Timeline() {
             </div>
             <div className="writeup exp">
               <div className="img">
-                <img src="../images/timeline.png" alt="" />
+                <Image src="/images/timeline.png" alt="" width={55} height={55}/>
                 <p>6</p>
               </div>
               <div className="resume-scroll-left">

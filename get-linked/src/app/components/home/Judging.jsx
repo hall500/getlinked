@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -7,10 +8,10 @@ function Judging() {
     <Wrapper>
       <div className="wrapper">
         <div className="images">
-          <img src="/images/circle.png" alt="circle" className="circle" />
-          <img src="/images/judge.png" alt="judge" className="judge"/>
-          <img src="/images/star.png" alt="star" className="star" />
-          <img src="/images/blur-star.png" alt="blur" className="blur" />
+          <Image src="/images/circle.png" alt="circle" className="circle" width={180} height={180}/>
+          <Image src="/images/judge.png" alt="judge" className="judge"width={800} height={700}/>
+          <Image src="/images/star.png" alt="star" className="star" width={25} height={25}/>
+          <Image src="/images/blur-star.png" alt="blur" className="blur" width={25} height={25}/>
         </div>
         <div className="intro-text">
           <h1>
@@ -48,7 +49,7 @@ function Judging() {
             or APIs, and any other competition-specific requirements.
           </p>
           <button>Read More</button>
-          <img src="/images/star pu.png" alt="star" />
+          <Image src="/images/star pu.png" alt="star" width={25} height={25}/>
         </div>
       </div>
     </Wrapper>

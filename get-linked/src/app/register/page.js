@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
@@ -77,10 +78,10 @@ function page() {
 
   return (
     <Wrapper>
-      <div className="wrapper">
-        <div className='images'>
-          <img src='/images/image.png' />
-        </div>
+        <div className="wrapper">
+            <div className='images'>
+                <Image src='/images/image.png' width={800} height={800}/>
+            </div>
         <div className='container'>
           <h1>Register</h1>
           <p>Be part of this movement!</p>
