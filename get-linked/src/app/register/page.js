@@ -33,7 +33,7 @@ function page() {
     <Wrapper>
         <div className="wrapper">
             <div className='images'>
-                <Image src='/images/image.png' width={800} height={800}/>
+                <Image src='/images/image.png' width={800} height={800} className='image'/>
             </div>
         <div className='container'>
             <h1>Register</h1>
@@ -160,7 +160,7 @@ function page() {
           <span className="check"></span>
         </label>
         <br />
-                <button>Register Now</button>
+                <button type='submit'>Register Now</button>
             </form>
         </div>
         </div>
@@ -313,6 +313,157 @@ height: auto;
             }
         }
     }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    margin-top: 100px;
+    flex-direction: column;
+    padding: 20px;
+    .images {
+      width: 100%;
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .container {
+        width: 100%;
+        // height: 800px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 30px;
+        h1 {
+            color: #D434FE;
+            // font-family: Clash Display;
+            font-size: 30px;
+            // font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        p {
+            color: #FFF;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 25px 0px 25px 0px;
+        }
+        h2 {
+            color: #FFF;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        form {
+            .username-field {
+                width: 100%;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                label {
+                    margin-top: 30px;
+                    color: #FFF;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+              }
+              .check-wrap {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                cursor: pointer;
+                color: #FFF;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin-top: 30px;
+              }
+              .check-wrap input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+              }
+              .check {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background: #ffffff;
+                border: 1px solid #d0d5dd;
+                border-radius: 6px;
+                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+              }
+              .check-wrap input:checked ~ .check {
+                background-color: white;
+                border: 1px solid #1570ef;
+              }
+              .check:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              .check-wrap input:checked ~ .check:after {
+                display: block;
+              }
+              .check-wrap .check:after {
+                left: 6px;
+                top: 1px;
+                width: 3px;
+                height: 9px;
+                border: solid #1570ef;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+              }
+            input,
+            select,
+            textarea {
+                height: 40px;
+                margin-top: 10px;
+                border-radius: 4px;
+                border: 1px solid #FFF;
+                padding: 0px 25px;
+                background: rgba(255, 255, 255, 0.03);
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                color: #FFF;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.25);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+            select {
+                width: 250px;;
+            }
+            button {
+                width: 100%;
+                height: 50px;
+                margin: 0 auto;
+                margin-top: 30px;
+                color: #FFF;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                border-radius: 4px;
+                background: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+            }
+        }
+    }
+}
 }
 
 `

@@ -9,7 +9,7 @@ function Introduction() {
       <div className="wrapper">
         <div className="images">
           <Image src="/images/sata gra.png" alt="sata" className="sata" width={35} height={35}/>
-          <Image src="/images/mind.png" alt="mind-bulb" width={500} height={500}/>
+          <Image src="/images/mind.png" alt="mind-bulb" width={500} height={500} className="bulb"/>
           <Image src="/images/arrow.png" alt="arrow" className="arrow" width={35} height={35}/>
         </div>
         <div className="intro-text">
@@ -92,6 +92,10 @@ const Wrapper = styled.div`
       width: 100%;
       margin: 0%;
       .images {
+        .bulb {
+          width: 400px;
+          height: 400px;
+        }
         margin-bottom: 80px;
         .sata {
           top: 150px; /* Adjust image position for smaller screens */

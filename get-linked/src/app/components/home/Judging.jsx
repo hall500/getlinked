@@ -160,6 +160,10 @@ const Wrapper = styled.div`
       margin: 0%;
       flex-direction: column;
       .images {
+        .judge {
+          width: 400px;
+          height: 400px;
+        }
         .circle {
           top: 70px;
           left: 120px;
