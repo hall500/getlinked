@@ -13,7 +13,7 @@ function Privacy() {
           </h1>
           <p>
           Below are our privacy & policy, which outline a lot of goodies. 
-            it’s our aim to always take of our participant
+            it&apos;s our aim to always take of our participant
           </p>
           <div className="first">
             <p>
