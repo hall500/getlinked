@@ -9,7 +9,7 @@ function page() {
             <div className='text'>
                 <h1>Get in touch</h1>
                 <p>Contact Information</p>
-                <p>27,Alara Street Yaba 100012 Lagos State</p>#
+                <p>27,Alara Street Yaba 100012 Lagos State</p>
                 <p className='call'>Call Us : 07067981819</p>
                 <p className='open'>we are open from Monday-Friday 08:00am - 05:00pm</p>
                 <span>Share on</span>

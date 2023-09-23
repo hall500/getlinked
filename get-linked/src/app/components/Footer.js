@@ -21,7 +21,13 @@ function Footer() {
                 <Image src="/images/star.png" alt="star" className="star" width={30} height={30}/>
             </div>
             <div className="content">
-                <div></div>
+                <div>
+                    <span>Useful Links</span>
+                    <p>Overview</p>
+                    <p>Timeline</p>
+                    <p>FAQs</p>
+                    <p>Register</p>
+                </div>
                 <div></div>
             </div>
         </Wrapper>
