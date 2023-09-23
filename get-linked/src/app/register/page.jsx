@@ -41,16 +41,10 @@ function Register() {
   const handleFormSubmition = async (e) => {
     e.preventDefault();
 
-    console.log(detail);
-    return;
-
     if (detail.teamName === "" || detail.projectName === "" || !detail.agree) {
       console.log('An Error occurred');
       return;
     }
-
-    console.log(detail);
-    return;
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
