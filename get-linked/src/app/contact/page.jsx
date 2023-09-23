@@ -1,8 +1,66 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    message: '',
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleFormSubmission = async (e) => {
+    e.preventDefault();
+
+    // Validate form fields
+    if (formData.fullName === '' || formData.email === '' || formData.message === '') {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "email": formData.email,
+        "phone_number": "08124688722",
+        "first_name": formData.fullName,
+        "message": formData.message
+    });
+
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    setSubmitting(true);
+    try {
+        
+      const response = await fetch("https://backend.getlinked.ai/hackathon/contact-form", requestOptions);
+
+      if(!response.ok){
+        throw new Error("Contact Submission Error");
+      }
+
+      //redirect to confirmation
+      const result = await response.json();
+      console.log('Form submitted successfully.', result);
+        // Optionally, reset the form fields:
+      setFormData({
+            fullName: '',
+            email: '',
+            message: '',
+      });
+    } catch (error) {
+      console.error('An error occurred: ', error.message);
+    } finally {
+        setSubmitting(false);
+    }
+  };
+
   return (
     <Wrapper>
         <div className='wrapper'>
@@ -18,16 +76,31 @@ function Contact() {
             <p>Questions or need assistance?</p>
             <p>Let us know  about it!</p>
             <form>
-                <input type='text' placeholder='Full Name' className='name'/>
-                <input type='email' placeholder='Mail' />
-                <textarea placeholder='Message' />
-                <button>Submit</button>
+                <input
+                type="text"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                />
+                <input
+                type="email"
+                placeholder="Mail"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
+                <textarea
+                placeholder="Message"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+                <button onClick={handleFormSubmission} disabled={ submitting ? true : '' }>{ submitting ? 'Submitting...' : 'Submit' }</button>
             </form>
         </div>
         </div>
     </Wrapper>
-  )
+  );
 }
+
 const Wrapper = styled.div`
 width: 100%;
 height: auto;
