@@ -13,8 +13,7 @@ function Header() {
   React.useEffect(() => {
     // Set the target time (00:00:00)
     const targetTime = new Date();
-    //targetTime.setHours(targetTime.getHours() + 1, 0, 0, 0);
-    targetTime.setHours(0, 0, 0, 0);
+    targetTime.setHours(targetTime.getHours() + 1, 0, 0, 0);
 
     // Update the countdown timer every second
     const interval = setInterval(() => {
