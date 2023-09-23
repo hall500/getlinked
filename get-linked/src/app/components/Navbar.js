@@ -6,13 +6,22 @@ import styled from "styled-components";
 
 function Navbar() {
   const [open, setOpen] = useState(false)
+  const handleTimeline = () => {
+    window.scrollTo(0, 4300);
+  };
+  const handleOverview = () => {
+    window.scrollTo(0, 1000);
+  };
+  const handleFaq = () => {
+    window.scrollTo(0, 3500);
+  };
   return (
     <Wrapper>
       <Link href='/'><Image src="/images/getlinked.png" alt="logo" width={200} height={50}/></Link>
       <ul style={open !== false ? {height: '100vh', left: 0} : {left: '-100%', overflow: 'hidden'}}>
-        <li><a>Timeline</a></li>
-        <li><a>Overview</a></li>
-        <li><a>FAQs</a></li>
+        <li onClick={handleTimeline}><a>Timeline</a></li>
+        <li onClick={handleOverview}><a>Overview</a></li>
+        <li onClick={handleFaq}><a>FAQs</a></li>
         <li><Link href='/contact'>Contact</Link></li>
         <Link href='/register' className="button">Register</Link>
       </ul>
