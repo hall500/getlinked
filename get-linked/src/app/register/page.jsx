@@ -3,15 +3,16 @@ import Image from 'next/image';
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-function page() {
-  const [detail, setDetail] = useState({
+function Register() {
+  const [detail, setDetail] = React.useState({
     teamName: "",
     projectName: "",
     phone: "",
     email: "",
     agree: false,
+    category: "0",
   });
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = React.useState([]);
   const baseUrl = "https://backend.getlinked.ai";
 
   const fetchCategoryList = async () => {
@@ -27,7 +28,6 @@ function page() {
 
       const response = await fetch(`${baseUrl}/hackathon/categories-list`, requestOptions)
       let result = await response.json();
-      console.log(result);
       setCategories(result);
 
     } catch (error) {
@@ -173,11 +173,9 @@ function page() {
                   id="name"
                   name="category"
                   required
+                  value={detail?.category}
                   onChange={() =>
-                    setDetail({
-                      ...detail,
-                      category: e.target.value,
-                    })
+                    console.log(e.target.value)
                   }
                 >
                   <option value="0">Select your category</option>
@@ -383,4 +381,4 @@ height: auto;
 
 `
 
-export default page
+export default Register;

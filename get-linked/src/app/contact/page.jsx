@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function page() {
+function Contact() {
   return (
     <Wrapper>
         <div className='wrapper'>
@@ -133,4 +133,4 @@ height: auto;
 }
 `
 
-export default page
+export default Contact;
