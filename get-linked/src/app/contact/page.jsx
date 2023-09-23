@@ -273,4 +273,4 @@ height: auto;
 }
 `
 
-export default Contact;
+export default page;

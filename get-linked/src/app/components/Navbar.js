@@ -17,7 +17,7 @@ function Navbar() {
   };
   return (
     <Wrapper>
-      <Link href='/'><Image src="/images/getlinked.png" alt="logo" width={200} height={50}/></Link>
+      <Link href='/'><Image src="/images/getlinked.png" alt="logo" width={200} height={50} className="logo"/></Link>
       <ul style={open !== false ? {height: '100vh', left: 0} : {left: '-100%', overflow: 'hidden'}}>
         <li onClick={handleTimeline}><a>Timeline</a></li>
         <li onClick={handleOverview}><a>Overview</a></li>
@@ -26,7 +26,7 @@ function Navbar() {
         <Link href='/register' className="button">Register</Link>
       </ul>
       <div style={open !== false ? {border: '1px solid #903AFF'} : null}>
-        <Image onClick={() => setOpen(!open)} src={open !== false ? "/images/close.png" : "/images/open.png"} alt="open menu" className="hamper" width={35} height={35}/>
+        <Image onClick={() => setOpen(!open)} src={open !== false ? "/images/close.png" : "/images/open.png"} alt="open menu" className="hamper" width={20} height={20}/>
       </div>
     </Wrapper>
   )
@@ -86,6 +86,11 @@ div {
 }
 @media (max-width: 1200px) {
     padding: 0px 20px;
+    height: 80px;
+    .logo {
+      width: 150px;
+      height: 30px;
+    }
     ul {
       position: absolute;
       width: 100%;
