@@ -229,6 +229,10 @@ const Wrapper = styled.div`
         width: 100%; 
         background-position: center;
         height: 700px;
+        .uni {
+          width: 400px;
+          height: 400px;
+        }
         h1 {
           top: 150px;
           font-size: 24px; 

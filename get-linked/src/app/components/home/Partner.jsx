@@ -138,7 +138,8 @@ padding: 120px;
     }
 
     .images .part {
-      width: 100%;
+        width: 400px;
+        height: 350px;
       padding: 60px; /* Adjust padding for smaller screens */
     }
 

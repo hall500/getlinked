@@ -94,6 +94,7 @@ function Contact() {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
                 <button onClick={handleFormSubmission} disabled={ submitting ? true : '' }>{ submitting ? 'Submitting...' : 'Submit' }</button>
+            
             </form>
         </div>
         </div>
@@ -200,6 +201,108 @@ height: auto;
                 line-height: normal;
                 border-radius: 4px;
                 background: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 30px;
+        .text {
+            width: 100%;
+            padding: 30px;
+            h1 {
+                color: #D434FE;
+            // font-family: Clash Display;
+            font-size: 30px;
+            // font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            }
+            p {
+                width: 100%;
+                color: #FFF;
+                margin-top: 30px;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .call {
+                width: 100%;
+            }
+            .open {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            span {
+                color: #D434FE;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+        .container {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            padding: 50px;
+            p {
+                color: #D434FE;
+                // font-family: Clash Display;
+                font-size: 20px;
+                // font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                // height: 300px;
+                input,
+                textarea {
+                    height: 40px;
+                    margin-top: 50px;
+                    border-radius: 4px;
+                    border: 1px solid #FFF;
+                    padding: 0px 25px;
+                    background: rgba(255, 255, 255, 0.03);
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                    color: #FFF;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    &::placeholder {
+                        color: #FFF;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    }
+                }
+                textarea {
+                    padding: 25px;
+                    height: 150px;
+                    margin-bottom: 30px;
+                }
+                button {
+                    width: 150px;
+                    height: 50px;
+                    margin: 0 auto;
+                    color: #FFF;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    border-radius: 4px;
+                    background: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+                }
             }
         }
     }
