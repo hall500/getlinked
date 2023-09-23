@@ -46,6 +46,9 @@ function page() {
       return;
     }
 
+    console.log(detail);
+    return;
+
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -82,7 +85,7 @@ function page() {
           <h1>Register</h1>
           <p>Be part of this movement!</p>
           <h2>CREATE YOUR ACCOUNT</h2>
-          <form onSubmit={handleFormSubmition}>
+          <form onSubmit={(event) => handleFormSubmition(event) }>
             <div className="username-field">
               <label htmlFor="teamName">
                 Team's Name
